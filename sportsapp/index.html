@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile Docs - Slide Panel</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script> 
+</head>
+<body>
+	<div data-role="page" class="ui-responsive-panel" data-theme="b"  id="page">
+	
+		
+		<div data-role="header"  data-position="fixed">
+			<h1>Alpha</h1>
+		<a href="#leftpanel2" data-role="button" data-inline="true" data-mini="true">Push</a>
+        <a href="#rightpanel3" data-role="button" data-inline="true" data-mini="true">Overlay</a>
+		</div><!-- /header -->
+		
+		<div data-role="content">
+                <h1>Title</h1>
+                <p><a href="#two" data-role="button">News and Features</a></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum lectus, commodo sit amet lacinia in, porttitor vel mi. Nullam in gravida tortor, nec auctor velit. Praesent cursus vel tortor vitae malesuada. Praesent at nisl eget enim dignissim cursus quis eu felis. Cras sit amet mollis sem. Duis mattis tellus urna, eu condimentum purus tempus sit amet. Suspendisse pretium lectus in purus placerat, id blandit elit dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut nec pretium nulla. Etiam sollicitudin arcu libero, ut consequat ante hendrerit at. Duis ut viverra nisi. Nulla quam lectus, tempus non lobortis eget, molestie imperdiet mi. In a ullamcorper massa, eu fringilla libero. Fusce porttitor pellentesque tortor et accumsan. Praesent semper arcu eros, et condimentum augue tempor et. Duis aliquet odio vitae mollis sagittis. </p>
+                <div data-demo-html="#panel-fixed-page1"></div><!--/demo-html -->
+                <!--<a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>-->
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed">
+			<p class="jqm-version"></p>
+			<p>Content TBD</p>
+		</div>
+
+		<!-- Here are a bunch of panels at the end, just before the close page tag  -->
+
+
+		<!-- leftpanel2  -->
+		<div data-role="panel" id="leftpanel2" data-position="left" data-display="push" data-dismissible="true" data-theme="b">
+			
+           <ul data-role="listview">
+                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>  
+                    <div id="profile_pic"></div>
+                        <ul>
+                            <li><a href="#two">News and Features</a></li>
+                            <li><a href="#panel-fixed-page2">Match Info</a></li>
+                            <li><a href="#panel-fixed-page2">Merchandise</a></li>
+                            <li><a href="#panel-fixed-page2">Tickets</a></li>
+                            <li><a href="#panel-fixed-page2">Betting</a></li>
+                            <li><a href="#panel-fixed-page2">Gallery</a></li>
+                            <li><a href="#panel-fixed-page2">Refreshments</a></li>
+                        </ul>
+                        <li><a href="#panel-fixed-page2">Fan Zone</a></li>
+                        <ul>
+                        <li><a href="#panel-fixed-page2">Fans Man of the Match</a></li>
+                        <li><a href="#panel-fixed-page2">Polls</a></li>
+                        <li><a href="#panel-fixed-page2">Tweet your seat</a></li>
+                        </ul>
+                        <li><a href="#panel-fixed-page2">Settings</a></li>
+                        <ul>
+                        <li><a href="#panel-fixed-page2">App Settings</a></li>
+                        <li><a href="#panel-fixed-page2">Personal Settings</a></li>
+                        <li><a href="#panel-fixed-page2">Terms and Policies</a></li>
+                        <li><a href="#panel-fixed-page2">Report a Problem</a></li>
+                        <li><a href="#panel-fixed-page2">Log Out</a></li>
+                        </ul>
+                </ul>
+			
+		</div><!-- /leftpanel2 -->
+
+
+		<!-- rightpanel3  -->
+		<div data-role="panel" id="rightpanel3" data-position="right" data-display="overlay" data-dismissible="true" data-theme="b">
+			
+            <form class="userform">
+                    <h2>Login</h2>
+                    <label for="name">Username:</label>
+                    <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+                    <label for="password">Password:</label>
+                    <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                        <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+                    </div>
+                    <h2>Register</h2>
+                    <p>Facebook</p>
+                    <p>Google +</p>
+                    <p>Twitter</p>
+                    <p>Windows ID</p>
+                    <p>Email</p>
+                </form>
+
+		</div><!-- /rightpanel3 -->
+        
+        <!-- Start of second page: #two -->
+        <div data-role="page" id="two" data-theme="a">
+        
+        	<div data-role="header">
+        		<h1>Two</h1>
+        	</div><!-- /header -->
+        
+        	<div data-role="content" data-theme="a">	
+        		<h2>Two</h2>
+        		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
+        		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>	
+        		<p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page "one"</a></p>	
+        		
+        	</div><!-- /content -->
+        	
+        	<div data-role="footer">
+        		<h4>Page Footer</h4>
+        	</div><!-- /footer -->
+        </div><!-- /page two -->
+
+	</div><!-- /page -->
+    <script type='text/javascript'>
+      $( document ).on( "pageinit", "#page", function() {
+      			
+      			$( document ).on( "swipeleft swiperight", "#page", function( e ) {
+      				// We check if there is no open panel on the page because otherwise
+      				// a swipe to close the left panel would also open the right panel (and v.v.).
+      				// We do this by checking the data that the framework stores on the page element (panel: open).
+      				if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+      					if ( e.type === "swipeleft"  ) {
+      						$( "#rightpanel3" ).panel( "open" );
+      					} else if ( e.type === "swiperight" ) {
+      						$( "#leftpanel2" ).panel( "open" );
+      					}
+      				}
+      			});
+      		});
+    </script>
+</body>
+</html>
