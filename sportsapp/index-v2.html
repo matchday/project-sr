@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile Docs - Slide Panel</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script> 
+</head>
+<body>   
+    
+	<div data-role="page" class="ui-responsive-panel" data-theme="b"  id="page">
+			
+		<div data-role="header"  data-position="fixed">
+			<h1>Alpha</h1>                                
+            <a href="#left-panel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all" data-role="button" data-inline="true" data-mini="true"></a>            
+		    <!--<a href="#left-panel" data-role="button" data-inline="true" data-mini="true">Push</a>-->
+            <a href="#right-panel" data-role="button" data-inline="true" data-mini="true">Overlay</a>
+		</div><!-- /header -->
+		
+		<div data-role="content">
+                <h1>News and Features</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum lectus, commodo sit amet lacinia in, porttitor vel mi. Nullam in gravida tortor, nec auctor velit. Praesent cursus vel tortor vitae malesuada. Praesent at nisl eget enim dignissim cursus quis eu felis. Cras sit amet mollis sem. Duis mattis tellus urna, eu condimentum purus tempus sit amet. Suspendisse pretium lectus in purus placerat, id blandit elit dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut nec pretium nulla. Etiam sollicitudin arcu libero, ut consequat ante hendrerit at. Duis ut viverra nisi. Nulla quam lectus, tempus non lobortis eget, molestie imperdiet mi. In a ullamcorper massa, eu fringilla libero. Fusce porttitor pellentesque tortor et accumsan. Praesent semper arcu eros, et condimentum augue tempor et. Duis aliquet odio vitae mollis sagittis. </p>
+                <div data-demo-html="#panel-fixed-page1"></div><!--/demo-html -->
+                <!--<a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>-->
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed">
+			<p class="jqm-version"></p>
+			<p>Content TBD</p>
+		</div>  
+
+		<!-- Start of panels  -->
+
+
+		<!-- left-panel  -->
+		<div data-role="panel" id="left-pane" data-position="left" data-display="push" data-dismissible="true" data-theme="b">
+			
+           <ul data-role="listview">
+                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>  
+                    <div id="profile_pic"></div>
+                        <ul>
+                            <li><a href="#news-and-features">News and Feature4567s</a></li>
+                            <li><a href="#panel-fixed-page2">Match Info</a></li>
+                            <li><a href="#panel-fixed-page2">Merchandise</a></li>
+                            <li><a href="#panel-fixed-page2">Tickets</a></li>
+                            <li><a href="#panel-fixed-page2">Betting</a></li>
+                            <li><a href="#panel-fixed-page2">Gallery</a></li>
+                            <li><a href="#panel-fixed-page2">Refreshments</a></li>
+                        </ul>
+                        <li><a href="#panel-fixed-page2">Fan Zone</a></li>
+                        <ul>
+                        <li><a href="#panel-fixed-page2">Fans Man of the Match</a></li>
+                        <li><a href="#panel-fixed-page2">Polls</a></li>
+                        <li><a href="#panel-fixed-page2">Tweet your seat</a></li>
+                        </ul>
+                        <li><a href="#panel-fixed-page2">Settings</a></li>
+                        <ul>
+                        <li><a href="#panel-fixed-page2">App Settings</a></li>
+                        <li><a href="#personal-settings">Personal Settings</a></li>
+                        <li><a href="#panel-fixed-page2">Terms and Policies</a></li>
+                        <li><a href="#panel-fixed-page2">Report a Problem</a></li>
+                        <li><a href="#panel-fixed-page2">Log Out</a></li>
+                        </ul>
+                </ul>
+			
+		</div><!-- /left-panel -->
+
+
+		<!-- right-panel  -->
+		<div data-role="panel" id="right-panel" data-position="right" data-display="overlay" data-dismissible="true" data-theme="b">
+			
+            <form class="userform">
+                    <h2>Login</h2>
+                    <label for="name">Username:</label>
+                    <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+                    <label for="password">Password:</label>
+                    <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                        <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+                    </div>
+                    <h2>Register</h2>
+                    <p>Facebook</p>
+                    <p>Google +</p>
+                    <p>Twitter</p>
+                    <p>Windows ID</p>
+                    <p>Email</p>
+                </form>
+
+		</div><!-- /right-panel -->
+        
+    </div><!-- /page -->
+    
+        
+         <!-- Start of second page -->
+        <div data-role="page" class="ui-responsive-panel" data-theme="b"  id="personal-settings">
+	               
+		
+		<div data-role="header"  data-position="fixed">
+			<h1>Alpha</h1>
+            <a href="#left-panel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all" data-role="button" data-inline="true" data-mini="true"></a>
+		    <!--<a href="#left-panel" data-role="button" data-inline="true" data-mini="true">Push</a>-->
+            <a href="#right-panel" data-role="button" data-inline="true" data-mini="true">Overlay</a>
+		</div><!-- /header -->
+		
+		<div data-role="content">
+                <h1>Personal Settings</h1>
+                <form class="userform">
+                    <h2>Login</h2>
+                    <label for="name">Username:</label>
+                    <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+                    <label for="password">Password:</label>
+                    <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                        <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+                    </div>
+                    <h2>Register</h2>
+                    <p>Facebook</p>
+                    <p>Google +</p>
+                    <p>Twitter</p>
+                    <p>Windows ID</p>
+                    <p>Email</p>
+                </form>
+                <!--<a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>-->
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed">
+			<p class="jqm-version"></p>
+			<p>Content TBD</p> 
+		</div>
+
+        <!-- /page two -->
+        
+                
+                            
+    <!-- Universal Panel code -->
+    <script type='text/javascript'>    
+    var panel = '<div data-role="panel" id="left-panel" data-position="left" data-display="push" data-theme="b"><h1>Panel</h1><p>stuff</p><ul data-role="listview" data-theme="a"><li>hi</li></ul></div>';
+    
+    $(document).on('pagebeforecreate', function () {
+      $.mobile.pageContainer.prepend(panel);
+      $("#left-panel").panel(); 
+      $("[data-role=panel]").panel().enhanceWithin();
+      $("#left-panel").trigger("updatelayout");                  
+    });        
+    </script>
+    
+    <!-- test code -->
+    <script type="text/javascript">
+    
+    </script>               
+        
+	<!-- Panel swipe code-->
+    <script type='text/javascript'>
+      $( document ).on( "pageinit", "#page", function() {
+      			
+      			$( document ).on( "swipeleft swiperight", "#page", function( e ) {
+      				// We check if there is no open panel on the page because otherwise
+      				// a swipe to close the left panel would also open the right panel (and v.v.).
+      				// We do this by checking the data that the framework stores on the page element (panel: open).
+      				if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+      					if ( e.type === "swipeleft"  ) {
+      						$( "#right-panel" ).panel( "open" );
+      					} else if ( e.type === "swiperight" ) {
+      						$( "#left-panel" ).panel( "open" );
+      					}
+      				}
+      			});
+      		});
+    </script>
+</body>
+</html>

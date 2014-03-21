@@ -8,21 +8,38 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script> 
+    <script type="text/javascript">
+/*var panel = '<div data-role="panel" id="left-panel" data-position="right" data-display="push"><h1>Panel</h1><ul data-role="listview" data-theme="b"><li><a href="#">test</a></li><li>test2</li></ul></div>';*/
+var panel = '<div data-role="panel" id="left-panel" data-position="left" data-display="push" data-theme="b"><ul data-role="listview"><li data-icon="delete" id="close_li"><a href="#" data-rel="close">Close menu</a></li><div id="profile_pic"></div><p class="name_caption">Name Here</p><ul><li><a href="#page">News and Freatures</a></li><li><a href="#match-info">Match Info</a></li><li><a href="#merchandise">Merchandise</a></li><li><a href="#tickets">Tickets</a></li><li><a href="#betting">Betting</a></li><li><a href="#panel-fixed-page2">Gallery</a></li><li><a href="#panel-fixed-page2">Refreshments</a></li></ul><li><a href="#panel-fixed-page2">Fan Zone</a></li><ul><li><a href="#panel-fixed-page2">Fans Man of the Match</a></li><li><a href="#panel-fixed-page2">Polls</a></li><li><a href="#panel-fixed-page2">Tweet your seat</a></li></ul><li><a href="#panel-fixed-page2">Settings</a></li><ul><li><a href="#panel-fixed-page2">App Settings</a></li><li><a href="#personal-settings">Personal Settings</a></li><li><a href="#panel-fixed-page2">Terms and Policies</a></li><li><a href="#panel-fixed-page2">Report a Problem</a></li><li><a href="#popupBasic" data-rel="popup">Log Out</a></li></ul></ul></div>';
+
+$(document).one('pagebeforecreate', function () {   
+  $.mobile.pageContainer.prepend(panel).enhanceWithin();
+  $("#left-panel").panel(); 
+});
+
+
+</script>
 </head>
 <body>
-	<div data-role="page" class="ui-responsive-panel" data-theme="b"  id="page">
-	
-		
+    <!-- logout popup 
+    /// tofix: pops up just before the page loads as a full page screen on mobile ////
+    <div data-role="popup" id="popupBasic" data-theme="b" data-overlay-theme="b" data-position-to="window">
+		<h2>Are you sure you want to log out?</h2>
+        <a href="#" data-role="button">Yes</a> 
+        <a href="#" data-role="button">No</a> 
+    </div>
+    <!-- /logout popup -->
+
+    <div data-role="page" class="ui-responsive-panel" data-theme="b"  id="page">
+			
 		<div data-role="header"  data-position="fixed">
-			<h1>Alpha</h1>
-		<a href="#leftpanel2" data-role="button" data-inline="true" data-mini="true">Push</a>
-        <a href="#rightpanel3" data-role="button" data-inline="true" data-mini="true">Overlay</a>
+			<h1>Alpha</h1>    
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a>                                        
 		</div><!-- /header -->
 		
 		<div data-role="content">
-                <h1>Title</h1>
-                <p><a href="#two" data-role="button">News and Features</a></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum lectus, commodo sit amet lacinia in, porttitor vel mi. Nullam in gravida tortor, nec auctor velit. Praesent cursus vel tortor vitae malesuada. Praesent at nisl eget enim dignissim cursus quis eu felis. Cras sit amet mollis sem. Duis mattis tellus urna, eu condimentum purus tempus sit amet. Suspendisse pretium lectus in purus placerat, id blandit elit dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut nec pretium nulla. Etiam sollicitudin arcu libero, ut consequat ante hendrerit at. Duis ut viverra nisi. Nulla quam lectus, tempus non lobortis eget, molestie imperdiet mi. In a ullamcorper massa, eu fringilla libero. Fusce porttitor pellentesque tortor et accumsan. Praesent semper arcu eros, et condimentum augue tempor et. Duis aliquet odio vitae mollis sagittis. </p>
+                <h1>News and Features</h1>
+                <p><a href="#personal-settings">Page 2</a></p>
                 <div data-demo-html="#panel-fixed-page1"></div><!--/demo-html -->
                 <!--<a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>-->
 		</div><!-- /content -->
@@ -31,104 +48,276 @@
 			<p class="jqm-version"></p>
 			<p>Content TBD</p>
 		</div>
-
-		<!-- Here are a bunch of panels at the end, just before the close page tag  -->
-
-
-		<!-- leftpanel2  -->
-		<div data-role="panel" id="leftpanel2" data-position="left" data-display="push" data-dismissible="true" data-theme="b">
-			
-           <ul data-role="listview">
-                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>  
-                    <div id="profile_pic"></div>
-                        <ul>
-                            <li><a href="#two">News and Features</a></li>
-                            <li><a href="#panel-fixed-page2">Match Info</a></li>
-                            <li><a href="#panel-fixed-page2">Merchandise</a></li>
-                            <li><a href="#panel-fixed-page2">Tickets</a></li>
-                            <li><a href="#panel-fixed-page2">Betting</a></li>
-                            <li><a href="#panel-fixed-page2">Gallery</a></li>
-                            <li><a href="#panel-fixed-page2">Refreshments</a></li>
-                        </ul>
-                        <li><a href="#panel-fixed-page2">Fan Zone</a></li>
-                        <ul>
-                        <li><a href="#panel-fixed-page2">Fans Man of the Match</a></li>
-                        <li><a href="#panel-fixed-page2">Polls</a></li>
-                        <li><a href="#panel-fixed-page2">Tweet your seat</a></li>
-                        </ul>
-                        <li><a href="#panel-fixed-page2">Settings</a></li>
-                        <ul>
-                        <li><a href="#panel-fixed-page2">App Settings</a></li>
-                        <li><a href="#panel-fixed-page2">Personal Settings</a></li>
-                        <li><a href="#panel-fixed-page2">Terms and Policies</a></li>
-                        <li><a href="#panel-fixed-page2">Report a Problem</a></li>
-                        <li><a href="#panel-fixed-page2">Log Out</a></li>
-                        </ul>
-                </ul>
-			
-		</div><!-- /leftpanel2 -->
-
-
-		<!-- rightpanel3  -->
-		<div data-role="panel" id="rightpanel3" data-position="right" data-display="overlay" data-dismissible="true" data-theme="b">
-			
+    
+    </div>
+    
+    <!-- personal-settings -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="personal-settings">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Personal Settings</h1>
+            <p><a href="#page">Page 1</a></p>
             <form class="userform">
-                    <h2>Login</h2>
-                    <label for="name">Username:</label>
-                    <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
-                    <label for="password">Password:</label>
-                    <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
-                        <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
-                    </div>
-                    <h2>Register</h2>
-                    <p>Facebook</p>
-                    <p>Google +</p>
-                    <p>Twitter</p>
-                    <p>Windows ID</p>
-                    <p>Email</p>
-                </form>
+                <h2>Log In</h2>
+                <label for="name">Username:</label>
+                <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+                <label for="password">Password:</label>
+                <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                    <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+                </div>
+                <p>or log in with</p>
+                <p>Facebook</p>
+                <p>Google +</p>
+                <p>Twitter</p>
+                <p>Windows ID</p>
+                <h2>Register</h2>               
+                <p>Email</p>
+            </form>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
 
-		</div><!-- /rightpanel3 -->
+    </div>    
+    <!-- /personal-settings -->
+    
+    <!-- match-info -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="match-info">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
         
-        <!-- Start of second page: #two -->
-        <div data-role="page" id="two" data-theme="a">
+        <div data-role="content">
+            <h1>Match Info</h1>
+        </div><!-- /content -->
         
-        	<div data-role="header">
-        		<h1>Two</h1>
-        	</div><!-- /header -->
-        
-        	<div data-role="content" data-theme="a">	
-        		<h2>Two</h2>
-        		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
-        		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>	
-        		<p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page "one"</a></p>	
-        		
-        	</div><!-- /content -->
-        	
-        	<div data-role="footer">
-        		<h4>Page Footer</h4>
-        	</div><!-- /footer -->
-        </div><!-- /page two -->
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
 
-	</div><!-- /page -->
-    <script type='text/javascript'>
-      $( document ).on( "pageinit", "#page", function() {
-      			
-      			$( document ).on( "swipeleft swiperight", "#page", function( e ) {
-      				// We check if there is no open panel on the page because otherwise
-      				// a swipe to close the left panel would also open the right panel (and v.v.).
-      				// We do this by checking the data that the framework stores on the page element (panel: open).
-      				if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-      					if ( e.type === "swipeleft"  ) {
-      						$( "#rightpanel3" ).panel( "open" );
-      					} else if ( e.type === "swiperight" ) {
-      						$( "#leftpanel2" ).panel( "open" );
-      					}
-      				}
-      			});
-      		});
-    </script>
+    </div>    
+    <!-- /match-info -->
+    
+    <!-- merchandise -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="merchandise">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Merchandise</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /merchandise -->
+    
+    <!-- tickets -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="tickets">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Tickets</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /tickets -->
+    
+    <!-- betting -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="betting">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Betting</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /betting -->
+    
+    <!-- gallery -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="gallery">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Gallery</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /gallery -->
+    
+    <!-- refreshments -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="refreshments">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Refreshments</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /refreshments -->
+    
+    <!-- fans-man -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="fans-man">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Fans man of the match</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /fans-man -->
+    
+    <!-- polls -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="polls">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Polls</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /polls -->
+    
+    <!-- tweet-seat -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="tweet-seat">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Tweet Your Seat</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /tweet-seat -->
+    
+    <!-- app-settings -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="app-settings">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>App Settings</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /app-settings -->
+    
+    <!-- terms-policies -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="terms-policies">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Terms And Policies</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /terms-policies -->
+    
+    <!-- report-problem -->
+    <div data-role="page" class="ui-responsive-panel" data-theme="b" id="report-problem">
+       
+        <div data-role="header"  data-position="fixed">
+        	<h1>Alpha</h1>
+            <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> 
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <h1>Report a Problem</h1>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+        	<p>Content TBD</p> 
+        </div>
+
+    </div>    
+    <!-- /report-problem -->
+
+    
+
 </body>
 </html>

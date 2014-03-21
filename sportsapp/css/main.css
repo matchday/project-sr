@@ -101,7 +101,7 @@ textarea {
     height: 7em;
     width: 7em;
     background-color: red;
-    margin: 2em auto;
+    margin: auto;
 }
 
 #header_img_1 {
@@ -127,6 +127,15 @@ textarea {
     width: 16em;
     background-color: #ccc;
     margin: 0 auto;
+}
+
+.name_caption {
+    text-align: center;
+    margin: 0em 0em 1em 0em;
+}
+
+#close_li {
+  margin-bottom: 2em;
 }
 
 

@@ -1,118 +1,118 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
-        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>              
-        
-        <!--<link rel="stylesheet" href="/css/jquery.mobile-1.4.2.css" />
-        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="/js/jquery.mobile-1.4.2.js">                      -->
-        
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <div data-url="panel-fixed-page1" data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="Panel fixed positioning">
-            <div data-role="header" data-position="fixed"> 
-              <div id="i">
-                <div id="header_img_1"><p>Logo 1</p></div>
-                <div id="header_img_2"><p>Logo 2</p></div>
-              </div>
-                <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
-                <a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
-            </div><!-- /header -->
-            <div role="main" class="ui-content jqm-content jqm-fullwidth">
-                <h1>Title</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum lectus, commodo sit amet lacinia in, porttitor vel mi. Nullam in gravida tortor, nec auctor velit. Praesent cursus vel tortor vitae malesuada. Praesent at nisl eget enim dignissim cursus quis eu felis. Cras sit amet mollis sem. Duis mattis tellus urna, eu condimentum purus tempus sit amet. Suspendisse pretium lectus in purus placerat, id blandit elit dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut nec pretium nulla. Etiam sollicitudin arcu libero, ut consequat ante hendrerit at. Duis ut viverra nisi. Nulla quam lectus, tempus non lobortis eget, molestie imperdiet mi. In a ullamcorper massa, eu fringilla libero. Fusce porttitor pellentesque tortor et accumsan. Praesent semper arcu eros, et condimentum augue tempor et. Duis aliquet odio vitae mollis sagittis. </p>
-                <div data-demo-html="#panel-fixed-page1"></div><!--/demo-html -->
-
-                <!--<a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>-->
-
-            </div><!-- /content -->          
-            <div data-role="footer" data-position="fixed">
-                <h4>Content TBD</h4>
-            </div><!-- /footer -->
-            <div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
-                <ul data-role="listview">
-                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-                    <div id="profile_pic"></div>
-                        <ul>
-                            <li><a href="#panel-fixed-page2">News and Freatures</a></li>
-                            <li><a href="#panel-fixed-page2">Match Info</a></li>
-                            <li><a href="#panel-fixed-page2">Merchandise</a></li>
-                            <li><a href="#panel-fixed-page2">Tickets</a></li>
-                            <li><a href="#panel-fixed-page2">Betting</a></li>
-                            <li><a href="#panel-fixed-page2">Gallery</a></li>
-                            <li><a href="#panel-fixed-page2">Refreshments</a></li>
-                        </ul>
-                        <li><a href="#panel-fixed-page2">Fan Zone</a></li>
-                        <ul>
-                        <li><a href="#panel-fixed-page2">Fans Man of the Match</a></li>
-                        <li><a href="#panel-fixed-page2">Polls</a></li>
-                        <li><a href="#panel-fixed-page2">Tweet your seat</a></li>
-                        </ul>
-                        <li><a href="#panel-fixed-page2">Settings</a></li>
-                        <ul>
-                        <li><a href="#panel-fixed-page2">App Settings</a></li>
-                        <li><a href="#panel-fixed-page2">Personal Settings</a></li>
-                        <li><a href="#panel-fixed-page2">Terms and Policies</a></li>
-                        <li><a href="#panel-fixed-page2">Report a Problem</a></li>
-                        <li><a href="#panel-fixed-page2">Log Out</a></li>
-                        </ul>
-                </ul>
-            </div><!-- /panel -->
-            <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form">
-                <form class="userform">
-                    <h2>Login</h2>
-                    <label for="name">Username:</label>
-                    <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
-                    <label for="password">Password:</label>
-                    <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
-                        <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
-                    </div>
-                    <h2>Register</h2>
-                    <p>Facebook</p>
-                    <p>Google +</p>
-                    <p>Twitter</p>
-                    <p>Windows ID</p>
-                    <p>Email</p>
-                </form>
-            </div><!-- /panel -->
-        </div>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
-</html>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>              
+        
+        <!--<link rel="stylesheet" href="/css/jquery.mobile-1.4.2.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="/js/jquery.mobile-1.4.2.js">                      -->
+        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div data-url="panel-fixed-page1" data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="Panel fixed positioning">
+            <div data-role="header" data-position="fixed"> 
+              <div id="i">
+                <div id="header_img_1"><p>Logo 1</p></div>
+                <div id="header_img_2"><p>Logo 2</p></div>
+              </div>
+                <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+                <a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
+            </div><!-- /header -->
+            <div role="main" class="ui-content jqm-content jqm-fullwidth">
+                <h1>Title</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum lectus, commodo sit amet lacinia in, porttitor vel mi. Nullam in gravida tortor, nec auctor velit. Praesent cursus vel tortor vitae malesuada. Praesent at nisl eget enim dignissim cursus quis eu felis. Cras sit amet mollis sem. Duis mattis tellus urna, eu condimentum purus tempus sit amet. Suspendisse pretium lectus in purus placerat, id blandit elit dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut nec pretium nulla. Etiam sollicitudin arcu libero, ut consequat ante hendrerit at. Duis ut viverra nisi. Nulla quam lectus, tempus non lobortis eget, molestie imperdiet mi. In a ullamcorper massa, eu fringilla libero. Fusce porttitor pellentesque tortor et accumsan. Praesent semper arcu eros, et condimentum augue tempor et. Duis aliquet odio vitae mollis sagittis. </p>
+                <div data-demo-html="#panel-fixed-page1"></div><!--/demo-html -->
+
+                <!--<a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>-->
+
+            </div><!-- /content -->          
+            <div data-role="footer" data-position="fixed">
+                <h4>Content TBD</h4>
+            </div><!-- /footer -->
+            <div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+                <ul data-role="listview">
+                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                    <div id="profile_pic"></div>
+                        <ul>
+                            <li><a href="#panel-fixed-page2">News and Freatures</a></li>
+                            <li><a href="#panel-fixed-page2">Match Info</a></li>
+                            <li><a href="#panel-fixed-page2">Merchandise</a></li>
+                            <li><a href="#panel-fixed-page2">Tickets</a></li>
+                            <li><a href="#panel-fixed-page2">Betting</a></li>
+                            <li><a href="#panel-fixed-page2">Gallery</a></li>
+                            <li><a href="#panel-fixed-page2">Refreshments</a></li>
+                        </ul>
+                        <li><a href="#panel-fixed-page2">Fan Zone</a></li>
+                        <ul>
+                        <li><a href="#panel-fixed-page2">Fans Man of the Match</a></li>
+                        <li><a href="#panel-fixed-page2">Polls</a></li>
+                        <li><a href="#panel-fixed-page2">Tweet your seat</a></li>
+                        </ul>
+                        <li><a href="#panel-fixed-page2">Settings</a></li>
+                        <ul>
+                        <li><a href="#panel-fixed-page2">App Settings</a></li>
+                        <li><a href="#panel-fixed-page2">Personal Settings</a></li>
+                        <li><a href="#panel-fixed-page2">Terms and Policies</a></li>
+                        <li><a href="#panel-fixed-page2">Report a Problem</a></li>
+                        <li><a href="#panel-fixed-page2">Log Out</a></li>
+                        </ul>
+                </ul>
+            </div><!-- /panel -->
+            <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form">
+                <form class="userform">
+                    <h2>Login</h2>
+                    <label for="name">Username:</label>
+                    <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+                    <label for="password">Password:</label>
+                    <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                        <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+                    </div>
+                    <h2>Register</h2>
+                    <p>Facebook</p>
+                    <p>Google +</p>
+                    <p>Twitter</p>
+                    <p>Windows ID</p>
+                    <p>Email</p>
+                </form>
+            </div><!-- /panel -->
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
