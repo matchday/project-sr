@@ -101,21 +101,21 @@ textarea {
     height: 7em;
     width: 7em;
     background-color: red;
-    margin: auto;
+    margin: 2em 0em 0.5em 5em;
 }
 
 #header_img_1 {
-    height: 3em;
+
     width: 7em;
-    background-color: red;
+    background-color: ##131313;
     float: left;
     margin: 0 0.5em 0 0.5em;
 }
 
 #header_img_2 {
-    height: 3em;
+
     width: 7em;
-    background-color: red;
+    background-color: ##131313;
     float: right;
     margin: 0 0.5em 0 0.5em;
 }
@@ -123,9 +123,9 @@ textarea {
 #i {
     text-align: center;
     text-shadow: none;
-    height: 3em;
+    
     width: 16em;
-    background-color: #ccc;
+    background-color: #131313;
     margin: 0 auto;
 }
 
@@ -135,9 +135,76 @@ textarea {
 }
 
 #close_li {
-  margin-bottom: 2em;
+    margin-bottom: 2em;
 }
 
+.social_box_fb {
+    background-color: #507cbe;
+    height: 4em;
+    width: 10em;
+    margin: 2em;
+}
+.fb{
+    height: 4em; 
+    background: url("/img/02_facebook.png") no-repeat;
+    padding: 1.3em 0em 0em 3.5em; 
+}
+.social_box_gp {
+    background-color: #4d4f54;
+    height: 4em;
+    width: 10em;
+    margin: 2em;
+}
+.gp{
+    height: 4em; 
+    background: url("/img/14_google+.png") no-repeat; 
+    padding: 1.3em 0em 0em 3.5em;
+}
+.social_box_tw {
+    background-color: #63cdf1;
+    height: 4em;
+    width: 10em;
+    margin: 2em;
+}
+.tw{
+    height: 4em;
+    background: url("/img/01_twitter.png") no-repeat; 
+    padding: 1.3em 0em 0em 3.5em;
+}
+.social_box_wi {
+    background-color: #90cadd;
+    height: 4em;
+    width: 10em;
+    margin: 2em;
+}
+.wi{
+    height: 4em; 
+    background: url("/img/17_windows8.png") no-repeat; 
+    padding: 1.3em 0em 0em 3.5em;
+}
+
+.ui-focus,
+.ui-btn:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.ui-header .ui-btn, .ui-header .ui-icon, .ui-header .ui-btn-inner {
+    width: 35px;
+    height: 35px;
+}
+.ui-header .ui-btn-inner .ui-icon{
+    margin: 0px;
+    border-radius: 0;
+}
+.ui-header {
+    height: 50px;
+}
+
+.ui-icon-bars:after {
+    background-image: url("/img/button.png"); !important;
+}
 
 
 
