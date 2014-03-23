@@ -97,6 +97,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/*  profile image */
 #profile_pic {
     height: 7em;
     width: 7em;
@@ -104,6 +105,13 @@ textarea {
     margin: 2em 0em 0.5em 5em;
 }
 
+.name_caption {
+    text-align: center;
+    margin: 0em 0em 1em 0em;
+}
+
+
+/*  header styles */
 #header_img_1 {
 
     width: 7em;
@@ -122,22 +130,44 @@ textarea {
 
 #i {
     text-align: center;
-    text-shadow: none;
-    
+    text-shadow: none;    
     width: 16em;
     background-color: #131313;
     margin: 0 auto;
 }
 
-.name_caption {
-    text-align: center;
-    margin: 0em 0em 1em 0em;
+/* removes blue "glow" from the button when activated */
+.ui-focus,
+.ui-btn:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
-#close_li {
-    margin-bottom: 2em;
+/* increased the size of the button, unfortunately the 
+image doesn't scale, just the outline box is expanded.
+Might replace with an image.*/
+.ui-header .ui-btn, .ui-header .ui-icon, .ui-header .ui-btn-inner {
+    width: 35px;
+    height: 35px;
+}
+.ui-header .ui-btn-inner .ui-icon{
+    margin: 0px;
+    border-radius: 0;
+}
+.ui-header {
+    height: 50px;
+}
+/* prototype buton replacement */
+.ui-icon-bars:after {
+    background-image: url("/img/button.png"); !important;
 }
 
+/* left-panel */
+
+
+
+/* personal settings */
 .social_box_fb {
     background-color: #507cbe;
     height: 4em;
@@ -183,27 +213,10 @@ textarea {
     padding: 1.3em 0em 0em 3.5em;
 }
 
-.ui-focus,
-.ui-btn:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-}
 
-.ui-header .ui-btn, .ui-header .ui-icon, .ui-header .ui-btn-inner {
-    width: 35px;
-    height: 35px;
-}
-.ui-header .ui-btn-inner .ui-icon{
-    margin: 0px;
-    border-radius: 0;
-}
-.ui-header {
-    height: 50px;
-}
 
-.ui-icon-bars:after {
-    background-image: url("/img/button.png"); !important;
+.footer_text {
+    text-align: center;
 }
 
 
