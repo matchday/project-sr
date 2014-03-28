@@ -235,6 +235,8 @@ Might replace with an image.*/
     -webkit-animation-duration: 110ms !important;
 }   
 
+
+/* CSS to stop the page from scrolling to the top when panel is opened */
 .ui-panel.ui-panel-open {
     position:fixed;
 }
@@ -246,6 +248,11 @@ Might replace with an image.*/
     bottom: 0px;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+}
+
+/* Stop the main page from scrolling past the menu if the page is longer than the menu */
+.ui-page-active {
+height: 70% !important;
 }
 
 
