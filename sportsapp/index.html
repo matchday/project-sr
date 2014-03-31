@@ -1,132 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>sportsapp</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.2.css" />
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/custom-init.js"></script>
-    <script src="js/jquery.mobile-1.4.2.js"></script> 
-    <script scr="phonegap.js"></script>
-    <script src="cdv-plugin-fb-connect.js"></script>
-    <script src="facebook-js-sdk.js"></script>
-    <script type="text/javascript">
-/*
-/// I'm keeping these 2 other panel variations to look back on as 
-they were either functioning or implementing other features that I might need code for ///
-var panel = '<div data-role="panel" id="left-panel" data-position="right" data-display="push"><h1>Panel</h1><ul data-role="listview" data-theme="b"><li><a href="#">test</a></li><li>test2</li></ul></div>';
-var panel = '<div data-role="panel" id="left-panel" data-position="left" data-display="push" data-theme="b"><ul data-role="listview"><li data-icon="delete" id="close_li"><a href="#" data-rel="close">Close menu</a></li><div id="profile_pic"></div><p class="name_caption">Name Here</p><ul><li><a href="#page">News and Freatures</a></li><li><a href="#match-info">Match Info</a></li><li><a href="#merchandise">Merchandise</a></li><li><a href="#tickets">Tickets</a></li><li><a href="#betting">Betting</a></li><li><a href="#panel-fixed-page2">Gallery</a></li><li><a href="#panel-fixed-page2">Refreshments</a></li></ul><li><a href="#panel-fixed-page2">Fan Zone</a></li><ul><li><a href="#panel-fixed-page2">Fans Man of the Match</a></li><li><a href="#panel-fixed-page2">Polls</a></li><li><a href="#panel-fixed-page2">Tweet your seat</a></li></ul><li><a href="#panel-fixed-page2">Settings</a></li><ul><li><a href="#panel-fixed-page2">App Settings</a></li><li><a href="#personal-settings">Personal Settings</a></li><li><a href="#panel-fixed-page2">Terms and Policies</a></li><li><a href="#panel-fixed-page2">Report a Problem</a></li><li><a href="#popupBasic" data-rel="popup">Log Out</a></li></ul></ul></div>'; 
-var panel = '<div data-role="panel" id="left-panel" data-position="left" data-display="push" data-dismissible="true" data-theme="b"><ul data-role="listview"><div id="profile_pic"></div><div id="auth-loggedin" style="display: none"><p class="name_caption"><span id="auth-displayname"></span>(<a href="#" id="auth-logoutlink">logout</a>)</p></div><ul data-role="listview"><li><a href="#page" data-transition="none">News and Features</a></li><li><a href="#match-info" data-transition="none">Match Info</a></li><li><a href="#merchandise" data-transition="none">Merchandise</a></li><li><a href="#tickets" data-transition="none">Tickets</a></li><li><a href="#betting" data-transition="none">Betting</a></li><li><a href="#gallery" data-transition="none">Gallery</a></li><li><a href="#refreshments" data-transition="none">Refreshments</a></li></ul><li data-role="list-divider">Fan Zone</li><ul data-role="listview"><li><a href="#fans-man" data-transition="none">Fans Man of the Match</a></li><li><a href="#polls" data-transition="none">Polls</a></li><li><a href="#tweet-seat" data-transition="none">Tweet your seat</a></li></ul><li data-role="list-divider">Settings</li><ul data-role="listview"><li><a href="#app-settings">App Settings</a></li><li><a href="#personal-settings">Personal Settings</a></li><li><a href="#terms-policies">Terms and Policies</a></li><li><a href="#report-problem">Report a Problem</a></li><li><a href="#">Log Out</a></li></ul></ul></div><!-- /leftpanel2 -->'; */
-var panel = '<div data-role="panel" id="left-panel" data-position="left" data-display="push" data-dismissible="true" data-theme="b" data-position-fixed="true"><ul data-role="listview"><div id="profile_pic"></div><div id="auth-loggedin" style="display: none"><p class="name_caption"><span id="auth-displayname"></span>(<a href="#" id="auth-logoutlink">logout</a>)</p></div><ul data-role="listview"><li><a href="#page" >News and Features</a></li><li><a href="#match-info" >Match Info</a></li><li><a href="#merchandise" >Merchandise</a></li><li><a href="#tickets" >Tickets</a></li><li><a href="#betting" >Betting</a></li><li><a href="#gallery" >Gallery</a></li><li><a href="#refreshments" >Refreshments</a></li></ul><li data-role="list-divider">Fan Zone</li><ul data-role="listview"><li><a href="#fans-man" >Fans Man of the Match</a></li><li><a href="#polls" >Polls</a></li><li><a href="#tweet-seat" >Tweet your seat</a></li></ul><li data-role="list-divider">Settings</li><ul data-role="listview"><li><a href="#app-settings">App Settings</a></li><li><a href="#personal-settings">Personal Settings</a></li><li><a href="#terms-policies">Terms and Policies</a></li><li><a href="#report-problem">Report a Problem</a></li><li><a href="#">Log Out</a></li></ul></ul></div><!-- /leftpanel2 -->';
+    <script src="js/jquery.mobile-1.4.2.js"></script>
+    <script>
+    var panel = '<div data-role="panel" id="left-panel" data-position="left" data-display="push" data-dismissible="true" data-theme="b" data-position-fixed="true"><ul data-role="listview"><div id="profile_pic"></div><p id="name_caption"></p><ul data-role="listview"><li><a href="#page" >News and Features</a></li><li><a href="#match-info">Match Info</a></li><li><a href="#merchandise" >Merchandise</a></li><li><a href="#tickets" >Tickets</a></li><li><a href="#betting" >Betting</a></li><li><a href="#gallery" >Gallery</a></li><li><a href="#refreshments" >Refreshments</a></li></ul><li data-role="list-divider">Fan Zone</li><ul data-role="listview"><li><a href="#fans-man" >Fans Man of the Match</a></li><li><a href="#polls" >Polls</a></li><li><a href="#tweet-seat" >Tweet your seat</a></li></ul><li data-role="list-divider">Settings</li><ul data-role="listview"><li><a href="#app-settings">App Settings</a></li><li><a href="#personal-settings">Personal Settings</a></li><li><a href="#terms-policies">Terms and Policies</a></li><li><a href="#report-problem">Report a Problem</a></li><li><a href="#" onclick="logout()">Log Out</a></li></ul></ul></div><!-- /left-panel -->';
 
-$(document).one('pagebeforecreate', function () {   
-  $.mobile.pageContainer.prepend(panel).enhanceWithin();
-  $("#left-panel").panel(); 
-});
-/*
-$( document ).on( "pageinit", ".swipe-panel", function() {
-    $( document ).on( "swipeleft swiperight", ".swipe-panel", function( e ) {
-        // We check if there is no open panel on the page because otherwise
-        // a swipe to close the left panel would also open the right panel (and v.v.).
-        // We do this by checking the data that the framework stores on the page element (panel: open).
-        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-            if ( e.type === "swipeleft"  ) {
-                $( "#right-panel" ).panel( "open" );
-            } else if ( e.type === "swiperight" ) {
-                $( "#left-panel" ).panel( "open" );
-            }
-        }
+    $(document).one('pagebeforecreate', function () {   
+        $.mobile.pageContainer.prepend(panel).enhanceWithin();
+        $("#left-panel").panel(); 
     });
-});*/
-
-$(function() {
-    $('body').on('swiperight', function () {
-        $('#left-panel').panel('open', '');
+    
+    $(function() {
+        $('body').on('swiperight', function () {
+            $('#left-panel').panel('open', '');
+        });
+    
+        $('body').on('swipeleft', function () {
+            $('#left-panel').panel('close');
+        });
     });
-
-    $('body').on('swipeleft', function () {
-        $('#left-panel').panel('close');
-    });
-});
-
-</script>
+    </script>
 </head>
 <body>
-    <!-- logout popup 
-    /// tofix: pops up just before the page loads as a full page screen on mobile ////
-    <div data-role="popup" id="popupBasic" data-theme="b" data-overlay-theme="b" data-position-to="window">
-		<h2>Are you sure you want to log out?</h2>
-        <a href="#" data-role="button">Yes</a> 
-        <a href="#" data-role="button">No</a> 
-    </div>
-    <!-- /logout popup -->
-     <div id="fb-root"></div>
-    <script type="text/javascript">
-    /* Commented out for now to try new connect method
-    
-    
-                // Load the SDK Asynchronously
-    (function(d) {
-    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-    if (d.getElementById(id)) { return; }
-    js = d.createElement('script'); js.id = id; js.async = true;
-    js.src = "//connect.facebook.net/en_US/all.js";
-    ref.parentNode.insertBefore(js, ref);
-    } (document));
-    // Init the SDK upon load
-    window.fbAsyncInit = function() {
-    FB.init({
-    appId: '1385788208364436', // App ID
-    channelUrl: '//' + window.location.hostname + '/channel', // Path to your Channel File
-    status: true, // check login status
-    cookie: true, // enable cookies to allow the server to access the session
-    xfbml: true // parse XFBML
-    });
-    // listen for and handle auth.statusChange events
-    FB.Event.subscribe('auth.statusChange', function(response) {
-    if (response.authResponse) {
-    // user has auth'd your app and is logged into Facebook
-    FB.api('/me', function(me) {
-    if (me.name) {
-    document.getElementById('auth-displayname').innerHTML = me.name;
-    }
-    })
-    document.getElementById('auth-loggedout').style.display = 'none';
-    document.getElementById('auth-loggedin').style.display = 'block';    
-    } else {
-    // user has not auth'd your app, or is not logged into Facebook
-    document.getElementById('auth-loggedout').style.display = 'block';
-    document.getElementById('auth-loggedin').style.display = 'none';  
-    }
-    });
-    $("#auth-logoutlink").click(function() { FB.logout(function() { window.location.reload(); }); });
-    }
-      */
-     
-        </script>
+               
+        <!--<script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>-->
+        <div id="fb-root"></div>
+        
+        <!-- cordova -->
+        <script src="cordova.js"></script>
+        
+        <!-- cordova facebook plugin -->
+        <script src="cdv-plugin-fb-connect.js"></script>
+        
+        <!-- facebook js sdk -->
+        <script src="facebook-js-sdk.js"></script>              
         <script>
-        FB.Event.subscribe('auth.login', function(response) {
-                               alert('auth.login event');
+        
+             <!-- These are the notifications that are displayed to the user through pop-ups if the above JS files does not exist in the same directory-->
+            if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Cordova variable does not exist. Check that you have included cordova.js correctly');
+            if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included cdv-plugin-fb-connect.js correctly');
+            if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
+            
+            FB.Event.subscribe('auth.login', function(response) {
+                               //alert('auth.login event');
+                               FB.api('/me', { fields: 'name, picture.type(normal)' }, function(response) {
+                               if (response.error) {
+                               alert(JSON.stringify(response.error));
+                               } else {
+                               document.getElementById('profile_pic').innerHTML = "<img src="+response.picture.data.url+">";
+                               document.getElementById('name_caption').innerHTML = response.name;
+                               alert('You have successfully logged in with Facebook');
+                                       /*var data = document.getElementById('data');
+                                       var d = document.createElement('div');
+                                       d.innerHTML = "<img src="+response.picture.data.url+">"+response.name;
+                                       //d.innerHTML = response.name+", "+response.picture.data.url;
+                                       data.appendChild(d);
+                                       console.log(response);
+                                       console.log(response.name);
+                                       console.log(pic_str);*/
+                                   }
                                });
+            });
             
             FB.Event.subscribe('auth.logout', function(response) {
-                               alert('auth.logout event');
+                               //alert('auth.logout event');
                                });
             
             FB.Event.subscribe('auth.sessionChange', function(response) {
-                               alert('auth.sessionChange event');
+                               //alert('auth.sessionChange event');
                                });
             
             FB.Event.subscribe('auth.statusChange', function(response) {
-                               alert('auth.statusChange event');
+                               //alert('auth.statusChange event');
                                });
             
             /*function getSession() {
-alert("session: " + JSON.stringify(FB.getSession()));
-}
-*/
+            alert("session: " + JSON.stringify(FB.getSession()));
+            }
+            */
+            
             function getLoginStatus() {
                 FB.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
@@ -136,9 +92,11 @@ alert("session: " + JSON.stringify(FB.getSession()));
                                   }
                                   });
             }
+            
             function logout() {
                 FB.logout(function(response) {
-                          alert('logged out');
+                          alert('You have successfully logged out');
+                          wipe();
                           });
             }
             
@@ -146,16 +104,31 @@ alert("session: " + JSON.stringify(FB.getSession()));
                 FB.login(
                          function(response) {
                          if (response.session) {
-                         alert('logged in');
+                         //alert('logged in');
                          } else {
-                         alert('not logged in');
+                         //alert('not logged in');
                          }
                          },
                          { scope: "email" }
                          );
             }
-        </script>
-    <div data-role="page" class="ui-responsive-panel swipe-panel" data-theme="b"  id="page">
+            
+            document.addEventListener('deviceready', function() {
+                                      try {
+                                      //alert('Temporary Alert, facebook scripts are successfully loaded');
+                                        //Put your FB APP_ID here!
+                                      FB.init({ appId: "1459832697580864", nativeInterface: CDV.FB, useCachedDialogs: false });
+                                      document.getElementById('data').innerHTML = "";
+                                      } catch (e) {
+                                      alert(e);
+                                      }
+                                      }, false);
+            function wipe() {
+                document.getElementById('profile_pic').innerHTML = "";
+                document.getElementById('name_caption').innerHTML = "";
+            } 
+            </script>
+        <div data-role="page" class="ui-responsive-panel swipe-panel" data-theme="b"  id="page">
 			
 		<div data-role="header"  data-position="fixed">
 			<div id="i">
@@ -167,26 +140,12 @@ alert("session: " + JSON.stringify(FB.getSession()));
 		
 		<div data-role="content">
           <h1>News and Features</h1>
-            <!--<div id="auth-status">
-                <div id="auth-loggedout">
-                  <div class="fb-login-button" autologoutlink="true" scope="email,user_checkins">Login with Facebook</div>
-                </div>
-            </div> 
-            <div id="auth-loggedin" style="display: none">
-                Welcome , <span id="auth-displayname"></span>(<a href="#" id="auth-logoutlink">logout</a>)
-            </div>
-            <button onclick="login()">Login</button>-->
+          <div id="data">loading ...</div>
+        </div>  
              
 		</div><!-- /content -->
-
-		<div data-role="footer" data-position="fixed" data-theme="b">
-			<p class="jqm-version"></p>
-			<p class="footer_text">Content TBD</p>
-		</div>
-    
-    </div>
-    
-    <!-- personal-settings -->
+        
+        <!-- personal-settings -->
     <div data-role="page" class="ui-responsive-panel swipe-panel" data-theme="b" id="personal-settings" >
        
         <div data-role="header"  data-position="fixed">
@@ -201,7 +160,7 @@ alert("session: " + JSON.stringify(FB.getSession()));
             <h1>Personal Settings</h1>
             <form class="userform">
                 <h2>Log In</h2>
-                <div class="social_box_fb"><img src="img/02_facebook.png" class="fb" /><p>Facebook</p></div>
+                <a href="#" onclick="login();"><div class="social_box_fb"><img src="img/02_facebook.png" class="fb" /><p>Facebook</p></div></a>
                 <div class="social_box_gp"><img src="img/14_google+.png" class="gp" /><p>Google +</p></div>
                 <div class="social_box_tw"><img src="img/01_twitter.png" class="tw" /><p>Twitter</p></div>
                 <div class="social_box_wi"><img src="img/17_windows8.png" class="wi" /><p>Windows ID</p></div>

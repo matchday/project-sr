@@ -99,13 +99,13 @@ textarea {
 
 /*  profile image */
 #profile_pic {
-    height: 110px;
+    height: 100px;
     width: 100px;
     background-color: red;
     margin: 2em 0em 0.5em 5.5em;
 }
 
-.name_caption {
+#name_caption {
     text-align: center;
     margin: 0em 0em 1em 0em;
 }
@@ -174,6 +174,7 @@ Might replace with an image.*/
 }
 .social_box_fb p {
     padding: 1.3em;
+    color: #fff;
 }
 .fb{
     height: 4em; 
@@ -257,7 +258,11 @@ height: 70% !important;
 
 
 
-
+ /* Temporary link styling */
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}
+a:active {text-decoration:none;}
 
 
 
