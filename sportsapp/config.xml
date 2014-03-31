@@ -27,6 +27,8 @@ version="1.0.0">
         <gap:platform name="blackberry" project="widgets"/>
     </gap:platforms>
 
+<preference name="fullscreen" value="true" />
+<preference name="orientation" value="landscape" />
 
 <feature name="http://api.phonegap.com/1.0/device"/>
 <feature name="http://api.phonegap.com/1.0/battery"/>
