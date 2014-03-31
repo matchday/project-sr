@@ -10,11 +10,13 @@ version="1.0.0">
     <description>
         Phase 1
     </description>
+    
+    <preference name="fullscreen" value="true" />
 
 <!-- FB Connect Section -->
 <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
 <param name="APP_ID" value="1459832697580864" /> <!-- FB App ID-->
-<param name="APP_NAME" value="socialtestrb" /> <!-- FB App Namespace-->
+<param name="APP_NAME" value="socialtestSA" /> <!-- FB App Namespace-->
 </gap:plugin>
 
     <author href="https://sub.example.com" email="someone@email.com">
