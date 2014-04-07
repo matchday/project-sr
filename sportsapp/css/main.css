@@ -224,8 +224,6 @@ Might replace with an image.*/
     float: left;
 }
 
-
-
 .footer_text {
     text-align: center;
 }
@@ -251,10 +249,11 @@ Might replace with an image.*/
     -webkit-overflow-scrolling: touch;
 }
 
-/* Stop the main page from scrolling past the menu if the page is longer than the menu */
+/* Stop the main page from scrolling past the menu if the page is longer than the menu  */
 .ui-page-active {
-height: 70% !important;
-}
+height: 70% !important; 
+}  
+
 
 
 

@@ -23,113 +23,131 @@
             $('#left-panel').panel('close');
         });
     });
+    /*
+    $( ":mobile-pagecontainer" ).on( "pagecontainershow", function( event, ui ) {
+        ScaleContentToDevice();
+    });
+            
+    $(document).on( "pagecontainershow", function(){ 
+        ScaleContentToDevice();        
+    });
+    
+    $(window).on("resize orientationchange", function(){
+        ScaleContentToDevice();
+    });
+    
+    function ScaleContentToDevice(){
+      scroll(0, 0);
+      var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height();
+      $(".ui-content").height(content);
+    } */
     </script>
 </head>
 <body>
                
-        <!--<script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>-->
-        <div id="fb-root"></div>
+    <!--<script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>-->
+    <div id="fb-root"></div>
+    
+    <!-- cordova -->
+    <script src="cordova.js"></script>
+    
+    <!-- cordova facebook plugin -->
+    <script src="cdv-plugin-fb-connect.js"></script>
+    
+    <!-- facebook js sdk -->
+    <script src="facebook-js-sdk.js"></script>              
+    <script>
+    
+         <!-- These are the notifications that are displayed to the user through pop-ups if the above JS files does not exist in the same directory-->
+        if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Cordova variable does not exist. Check that you have included cordova.js correctly');
+        if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included cdv-plugin-fb-connect.js correctly');
+        if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
         
-        <!-- cordova -->
-        <script src="cordova.js"></script>
+        FB.Event.subscribe('auth.login', function(response) {
+                           //alert('auth.login event');
+                           FB.api('/me', { fields: 'name, picture.type(normal)' }, function(response) {
+                           if (response.error) {
+                           alert(JSON.stringify(response.error));
+                           } else {
+                           document.getElementById('profile_pic').innerHTML = "<img src="+response.picture.data.url+">";
+                           document.getElementById('name_caption').innerHTML = response.name;
+                           alert('You have successfully logged in with Facebook');
+                                   /*var data = document.getElementById('data');
+                                   var d = document.createElement('div');
+                                   d.innerHTML = "<img src="+response.picture.data.url+">"+response.name;
+                                   //d.innerHTML = response.name+", "+response.picture.data.url;
+                                   data.appendChild(d);
+                                   console.log(response);
+                                   console.log(response.name);
+                                   console.log(pic_str);*/
+                               }
+                           });
+        });
         
-        <!-- cordova facebook plugin -->
-        <script src="cdv-plugin-fb-connect.js"></script>
+        FB.Event.subscribe('auth.logout', function(response) {
+                           //alert('auth.logout event');
+                           });
         
-        <!-- facebook js sdk -->
-        <script src="facebook-js-sdk.js"></script>              
-        <script>
+        FB.Event.subscribe('auth.sessionChange', function(response) {
+                           //alert('auth.sessionChange event');
+                           });
         
-             <!-- These are the notifications that are displayed to the user through pop-ups if the above JS files does not exist in the same directory-->
-            if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Cordova variable does not exist. Check that you have included cordova.js correctly');
-            if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included cdv-plugin-fb-connect.js correctly');
-            if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
-            
-            FB.Event.subscribe('auth.login', function(response) {
-                               //alert('auth.login event');
-                               FB.api('/me', { fields: 'name, picture.type(normal)' }, function(response) {
-                               if (response.error) {
-                               alert(JSON.stringify(response.error));
-                               } else {
-                               document.getElementById('profile_pic').innerHTML = "<img src="+response.picture.data.url+">";
-                               document.getElementById('name_caption').innerHTML = response.name;
-                               alert('You have successfully logged in with Facebook');
-                                       /*var data = document.getElementById('data');
-                                       var d = document.createElement('div');
-                                       d.innerHTML = "<img src="+response.picture.data.url+">"+response.name;
-                                       //d.innerHTML = response.name+", "+response.picture.data.url;
-                                       data.appendChild(d);
-                                       console.log(response);
-                                       console.log(response.name);
-                                       console.log(pic_str);*/
-                                   }
-                               });
-            });
-            
-            FB.Event.subscribe('auth.logout', function(response) {
-                               //alert('auth.logout event');
-                               });
-            
-            FB.Event.subscribe('auth.sessionChange', function(response) {
-                               //alert('auth.sessionChange event');
-                               });
-            
-            FB.Event.subscribe('auth.statusChange', function(response) {
-                               //alert('auth.statusChange event');
-                               });
-            
-            /*function getSession() {
-            alert("session: " + JSON.stringify(FB.getSession()));
-            }
-            */
-            
-            function getLoginStatus() {
-                FB.getLoginStatus(function(response) {
-                                  if (response.status == 'connected') {
-                                  alert('logged in');
-                                  } else {
-                                  alert('not logged in');
+        FB.Event.subscribe('auth.statusChange', function(response) {
+                           //alert('auth.statusChange event');
+                           });
+        
+        /*function getSession() {
+        alert("session: " + JSON.stringify(FB.getSession()));
+        }
+        */
+        
+        function getLoginStatus() {
+            FB.getLoginStatus(function(response) {
+                              if (response.status == 'connected') {
+                              alert('logged in');
+                              } else {
+                              alert('not logged in');
+                              }
+                              });
+        }
+        
+        function logout() {
+            FB.logout(function(response) {
+                      alert('You have successfully logged out');
+                      wipe();
+                      });
+        }
+        
+        function login() {
+            FB.login(
+                     function(response) {
+                     if (response.session) {
+                     //alert('logged in');
+                     } else {
+                     //alert('not logged in');
+                     }
+                     },
+                     { scope: "email" }
+                     );
+        }
+        
+        document.addEventListener('deviceready', function() {
+                                  try {
+                                  //alert('Temporary Alert, facebook scripts are successfully loaded');
+                                    //Put your FB APP_ID here!
+                                  FB.init({ appId: "1459832697580864", nativeInterface: CDV.FB, useCachedDialogs: false });
+                                  document.getElementById('data').innerHTML = "";
+                                  } catch (e) {
+                                  alert(e);
                                   }
-                                  });
-            }
-            
-            function logout() {
-                FB.logout(function(response) {
-                          alert('You have successfully logged out');
-                          wipe();
-                          });
-            }
-            
-            function login() {
-                FB.login(
-                         function(response) {
-                         if (response.session) {
-                         //alert('logged in');
-                         } else {
-                         //alert('not logged in');
-                         }
-                         },
-                         { scope: "email" }
-                         );
-            }
-            
-            document.addEventListener('deviceready', function() {
-                                      try {
-                                      //alert('Temporary Alert, facebook scripts are successfully loaded');
-                                        //Put your FB APP_ID here!
-                                      FB.init({ appId: "1459832697580864", nativeInterface: CDV.FB, useCachedDialogs: false });
-                                      document.getElementById('data').innerHTML = "";
-                                      } catch (e) {
-                                      alert(e);
-                                      }
-                                      }, false);
-            function wipe() {
-                document.getElementById('profile_pic').innerHTML = "";
-                document.getElementById('name_caption').innerHTML = "";
-            } 
-            </script>
-        <div data-role="page" class="ui-responsive-panel swipe-panel" data-theme="b"  id="page">
-			
+                                  }, false);
+        function wipe() {
+            document.getElementById('profile_pic').innerHTML = "";
+            document.getElementById('name_caption').innerHTML = "";
+        } 
+    </script>
+    <div data-role="page" class="ui-responsive-panel swipe-panel" data-theme="b"  id="page">
+	
 		<div data-role="header"  data-position="fixed">
 			<div id="i">
                 <div id="header_img_1"><p>Logo 1</p></div>
@@ -140,12 +158,17 @@
 		
 		<div data-role="content">
           <h1>News and Features</h1>
-          <div id="data">loading ...</div>
-        </div>  
+          <div id="data">loading ...</div>  
              
 		</div><!-- /content -->
         
-        <!-- personal-settings -->
+        <div data-role="footer" data-position="fixed" data-theme="b">
+        	<p class="footer_text">Content TBD</p> 
+        </div>
+    
+    </div>
+    
+    <!-- personal-settings -->
     <div data-role="page" class="ui-responsive-panel swipe-panel" data-theme="b" id="personal-settings" >
        
         <div data-role="header"  data-position="fixed">
@@ -172,12 +195,6 @@
                     <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
                     <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
                 </div>
-                <!--
-                <div id="auth-status">
-                  <div id="auth-loggedout">
-                    <div class="fb-login-button" autologoutlink="true" scope="email,user_checkins">Login with Facebook</div>
-                  </div>
-                </div> -->
             </form>                       
             <form class="userform">
                 <h2>Or Register</h2>
@@ -185,12 +202,6 @@
                 <input name="name" id="register" value="" data-clear-btn="true" data-mini="true" type="text">
                     <div><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Submit</a></div>
                 </div>
-                <!--
-                <div id="auth-status">
-                  <div id="auth-loggedout">
-                    <div class="fb-login-button" autologoutlink="true" scope="email,user_checkins">Login with Facebook</div>
-                  </div>
-                </div> -->
             </form>
         </div><!-- /content -->
         

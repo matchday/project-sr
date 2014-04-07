@@ -87,6 +87,7 @@
     <icon src="res/icon/windows-phone/icon-48.png" gap:platform="winphone" />
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone" gap:role="background" />
 
+<<<<<<< HEAD
     <!-- Define app splash screen for each platform. -->
     <gap:splash src="res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:density="ldpi" />
     <gap:splash src="res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:density="mdpi" />
@@ -114,3 +115,8 @@
     -->
 
 </widget>
+=======
+<access origin="*" />
+ 
+</widget>
+>>>>>>> origin/master
